@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Github</title>
+  <link rel="stylesheet" href="./github.css">
+</head>
+
+<body>
+  <div class="graph">
+    <ul class="graph__months">
+      <li class="graph__months__li">Jan</li>
+      <li class="graph__months__li">Feb</li>
+      <li class="graph__months__li">Mar</li>
+      <li class="graph__months__li">Apr</li>
+      <li class="graph__months__li">May</li>
+      <li class="graph__months__li">Jun</li>
+      <li class="graph__months__li">Jul</li>
+      <li class="graph__months__li">Aug</li>
+      <li class="graph__months__li">Sep</li>
+      <li class="graph__months__li">Oct</li>
+      <li class="graph__months__li">Nov</li>
+      <li class="graph__months__li">Dec</li>
+    </ul>
+    <ul class="graph__days">
+      <li class="graph__days__li">Sun</li>
+      <li class="graph__days__li">Mon</li>
+      <li class="graph__days__li">Tue</li>
+      <li class="graph__days__li">Wed</li>
+      <li class="graph__days__li">Thu</li>
+      <li class="graph__days__li">Fri</li>
+      <li class="graph__days__li">Sat</li>
+    </ul>
+    <ul class="graph__squares" data-js="squares"></ul>
+  </div>
+  <script>
+    const squares = document.querySelector('[data-js=squares]');
+    for (var i = 1; i < 365; i++) {
+      const level = Math.floor(Math.random() * 4);
+      let className = "";
+      className = level === 1 ? "graph__squares__li--light_green" : className;
+      className = level === 2 ? "graph__squares__li--green" : className;
+      className = level === 3 ? "graph__squares__li--dark_green" : className;
+      squares.insertAdjacentHTML('beforeend', `<li class="graph__squares__li ${className}"></li>`);
+    }
+  </script>
+</body>
+
+</html>

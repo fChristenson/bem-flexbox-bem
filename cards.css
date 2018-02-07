@@ -1,0 +1,35 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: steelblue;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+li {
+  border: 1px white solid;
+  width: 80px;
+  height: 80px;
+  background: crimson;
+  text-align: center;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+li:nth-child(odd) {
+  background: slateblue;
+}
+
+li:hover {
+  background: #222;
+}

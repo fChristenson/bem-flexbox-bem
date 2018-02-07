@@ -1,0 +1,77 @@
+/* Article - https://bitsofco.de/github-contribution-graph-css-grid/ */
+
+:root {
+  --square-size: 15px;
+  --square-gap: 5px;
+  --week-width: calc(var(--square-size) + var(--square-gap));
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 12px;
+}
+
+.graph {
+  padding: 20px;
+  border: 1px #e1e4e8 solid;
+  margin: 20px;
+  display: inline-grid;
+  grid-template-areas: "empty months"
+                       "days squares";
+  grid-template-columns: auto 1fr;
+  grid-gap: 10px;
+}
+
+.graph__days { grid-area: days; }
+
+.graph__months {
+  grid-area: months;
+  list-style: none;
+  display: grid;
+  grid-template-columns: calc(var(--week-width) * 4) /* Jan */
+                         calc(var(--week-width) * 4) /* Feb */
+                         calc(var(--week-width) * 4) /* Mar */
+                         calc(var(--week-width) * 5) /* Apr */
+                         calc(var(--week-width) * 4) /* May */
+                         calc(var(--week-width) * 4) /* Jun */
+                         calc(var(--week-width) * 5) /* Jul */
+                         calc(var(--week-width) * 4) /* Aug */
+                         calc(var(--week-width) * 4) /* Sep */
+                         calc(var(--week-width) * 5) /* Oct */
+                         calc(var(--week-width) * 4) /* Nov */
+                         calc(var(--week-width) * 5) /* Dec */;
+}
+
+.graph__days,
+.graph__squares {
+  list-style: none;
+  display: grid;
+  grid-gap: var(--square-gap);
+  grid-template-rows: repeat(7, var(--square-size));
+}
+
+.graph__squares {
+  grid-area: squares;
+  grid-auto-flow: column;
+  grid-auto-columns: var(--square-size);
+}
+
+.graph__days__li:nth-child(odd) {
+  visibility: hidden;
+}
+
+.graph__squares__li {
+  background-color: #ebedf0;
+}
+
+.graph__squares__li--light_green {
+  background-color: #c6e48b;
+}
+
+.graph__squares__li--green {
+  background-color: #7bc96f;
+}
+
+.graph__squares__li--dark_green {
+  background-color: #196127;
+}
