@@ -14,5 +14,3 @@
 With these 3 tools you have everything you need to master responsive and scalable css
 
 http://getbem.com/introduction/
-# bem-flexbox-bem
-# css-grid
